@@ -46,8 +46,8 @@ def getInfo(userid):
 #         if userinfo.get('name'):
 #             insertData(userinfo)
 #             print "%s  ---  %s" %(userinfo.get('conferenceId'), userinfo.get('name'))
-        insertData(userinfo)
         print "%s  ---  %s" %(userinfo.get('conferenceId'), userinfo.get('name'))
+        insertData(userinfo)
 
     except Exception:
         pass
@@ -75,7 +75,7 @@ def createThread(nums):
 if __name__ == '__main__':
     start = time.time()
     fnum = 86700001
-    lnum = 86700301
+    lnum = 86701001
     n = 4
     part = (lnum - fnum)/n
     numlist = map(lambda x:xrange(x*part+fnum, x!=n-1 and (x+1)*part+fnum or lnum+1),range(n))

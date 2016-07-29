@@ -47,9 +47,9 @@ def insertData(data):
 
 def createThread(nums):
     strnums = [str(x) for x in nums]
-    pool = Pool(8)
-#     pool.map(getInfo,strnums)
-    pool.apply(getInfo,args=(strnums,))
+    pool = Pool(10)
+    pool.map(getInfo,strnums)
+#     pool.apply(getInfo,args=(strnums,))
     pool.kill()
     pool.join()
     print "It's done! "
@@ -57,7 +57,7 @@ def createThread(nums):
 if __name__ == '__main__':
     start = time.time()
     fnum = 86700001
-    lnum = 86700201
+    lnum = 86700301
     n = 4
     part = (lnum - fnum)/n
     numlist = map(lambda x:xrange(x*part+fnum, x!=n-1 and (x+1)*part+fnum or lnum+1),range(n))

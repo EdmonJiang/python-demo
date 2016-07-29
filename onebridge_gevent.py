@@ -50,12 +50,13 @@ def createThread(nums):
     threads = [gevent.spawn(getInfo, i) for i in strnums]
     print "start! -- %d" % len(threads)
     gevent.joinall(threads)
+#     once one coroutine is done, all others will be killed
     print "It's done! "
    
 if __name__ == '__main__':
     start = time.time()
     fnum = 86700001
-    lnum = 86700101
+    lnum = 86700301
     n = 4
     part = (lnum - fnum)/n
     numlist = map(lambda x:xrange(x*part+fnum, x!=n-1 and (x+1)*part+fnum or lnum+1),range(n))
